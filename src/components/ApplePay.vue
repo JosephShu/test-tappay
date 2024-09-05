@@ -62,9 +62,7 @@ const setup = () => {
   }
 
   TPDirect.paymentRequestApi.setupApplePay({
-    // required, your apple merchant id
     merchantIdentifier: 'APME9YXQEPPzt1bTLOOg',
-    // defaults to 'TW'
     countryCode: 'TW'
   })
 
@@ -93,7 +91,7 @@ const payByApplePay = () => {
         "partner_key": "partner_1NTnD5SZK2SU0lGs6f9tWpIPzMIUbDvCDUOH1xNJQTg3OeFqsOdWmU0s",
         "prime": "${result.prime}",
         "amount": "${parseInt(result.total_amount)}",
-        "merchant_id": "GlobalTesting_CTBC",
+        "merchant_id": "_CTBC_Union_Pay",
         "details": "Some item",
         "cardholder": {
             "phone_number": "0987654321",
