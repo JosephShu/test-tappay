@@ -63,7 +63,7 @@ const setup = () => {
   }
 
   TPDirect.paymentRequestApi.setupApplePay({
-    merchantIdentifier: 'APME9YXQEPPzt1bTLOOg',
+    merchantIdentifier: 'APMEuWZp6R6AcmMNRAR4',
     countryCode: 'TW'
   })
 
