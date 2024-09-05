@@ -63,7 +63,7 @@ const setup = () => {
 
   TPDirect.paymentRequestApi.setupApplePay({
     // required, your apple merchant id
-    merchantIdentifier: 'merchant.tech.cherri.global.test',
+    merchantIdentifier: 'APME9YXQEPPzt1bTLOOg',
     // defaults to 'TW'
     countryCode: 'TW'
   })
