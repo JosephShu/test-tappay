@@ -42,7 +42,7 @@ const payByLine = () => {
 </script>
 
 <template>
-  <button @pointerdown="payByLine">LinePay</button>
+  <button class="c-button bg-[#1a1a1a]" @pointerdown="payByLine">LinePay</button>
 </template>
 
 <style scoped>

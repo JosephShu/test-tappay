@@ -54,22 +54,21 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.c-button {
   border-radius: 8px;
-  border: 1px solid transparent !important;
+  border: 1px solid transparent;
   padding: 0.6rem 1.2rem !important;
   font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+.c-button:hover {
+  border-color: #646cff !important;
 }
-button:focus,
-button:focus-visible {
+.c-button:focus,
+.c-button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 

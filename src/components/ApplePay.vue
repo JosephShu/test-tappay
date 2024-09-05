@@ -113,11 +113,13 @@ onBeforeMount(()=>{
 <template>
   <button v-bind="{
     class:{
+    'bg-[#1a1a1a]': !disabledApplePayCondition,
     'bg-gray-100': disabledApplePayCondition,
     'text-black': disabledApplePayCondition
     },
     disabled: disabledApplePayCondition,
     onClick: disabledApplePayCondition ? null : payByApplePay
-  }">ApplePay</button>
+  }" class="c-button"
+  >ApplePay</button>
 </template>
 
