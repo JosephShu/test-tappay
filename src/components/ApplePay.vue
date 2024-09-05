@@ -89,7 +89,7 @@ const payByApplePay = () => {
         "partner_key": "partner_1NTnD5SZK2SU0lGs6f9tWpIPzMIUbDvCDUOH1xNJQTg3OeFqsOdWmU0s",
         "prime": "${result.prime}",
         "amount": "${parseInt(result.total_amount)}",
-        "merchant_id": "_CTBC_Union_Pay",
+        "merchant_id": "waylonhsu06819931_CTBC_Union_Pay",
         "details": "Some item",
         "cardholder": {
             "phone_number": "0987654321",
