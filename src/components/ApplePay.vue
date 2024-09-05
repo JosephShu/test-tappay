@@ -53,10 +53,11 @@ const disabledApplePayCondition = computed(()=>{
   return !applePayAvailability || withoutCards.value
 })
 const applePaySupportContent = ref(null)
+const emits = defineEmits(['update-prime-by-apple-pay', 'update-apple-support-content'])
 
 const setup = () => {
   if(!applePayAvailability) {
-    applePaySupportContent.value = '裝置不支援 PaymentRequest / Apple Pay'
+    emits('update-apple-support-content','裝置不支援 PaymentRequest / Apple Pay')
     withoutCards.value = true
     return
   }
@@ -68,20 +69,17 @@ const setup = () => {
 
   TPDirect.paymentRequestApi.setupPaymentRequest(fakeData,(result)=>{
     if(result.canMakePaymentWithActiveCard) {
-      applePaySupportContent.value = '裝置可以使用 PaymentRequest / Apple Pay'
+      emits('update-apple-support-content','裝置可以使用 PaymentRequest / Apple Pay')
     } else {
-      applePaySupportContent.value = '裝置支援 PaymentRequest / Apple Pay，但是沒有可以支付的卡片'
+      emits('update-apple-support-content','裝置支援 PaymentRequest / Apple Pay，但是沒有可以支付的卡片')
       withoutCards.value = true
     }
   })
 }
 
-const emits = defineEmits(['update-prime-by-apple-pay'])
 
 const payByApplePay = () => {
   TPDirect.paymentRequestApi.getPrime(function(result) {
-
-    console.log(result)
 
     const command = `
     curl -X POST https://sandbox.tappaysdk.com/tpc/payment/pay-by-prime \\
