@@ -3,10 +3,18 @@ import {ref} from 'vue'
 import PaymentGroup from "./components/PaymentGroup.vue";
 import ShowPrime from "./components/ShowPrime.vue";
 const primeCommandContent = ref('')
+
+const clickBomb = ()=>{
+  faro.api.pushError(new Error('I am supposed to fail'), {
+    type: 'network',
+  });
+  throw new Error('bomb')
+}
 </script>
 
 <template>
   <div>
+    <button @click="clickBomb">Bomb</button>
     <PaymentGroup v-model="primeCommandContent" />
     <ShowPrime class="mt-[12rem]" :content="primeCommandContent" />
   </div>
